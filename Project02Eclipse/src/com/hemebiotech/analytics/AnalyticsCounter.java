@@ -4,48 +4,33 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.List;
+import java.util.Map;
 
 public class AnalyticsCounter {
 	private static int headacheCount = 0;
 	private static int rashCount = 0;
 	private static int pupilCount = 0;
+
+	// Constructeur pour les class ISymptomReader et ISymptomWriter
+	public AnalyticsCounter(ISymptomReader reader, ISymptomWriter writer) {
+		this.reader = reader;
+		this.writer = writer;
+	}
 	
 	public static void main(String[] args) throws Exception {
 
-		try {
-			// first get input
-			BufferedReader reader = new BufferedReader (new FileReader("C:/Roussel-David-debug-Java/Project02Eclipse/symptoms.txt"));
-			String line = reader.readLine();
+		// Méthode getSymptoms pour récupérer la liste des entrées dans le fichier
+		public List<String> getSymptoms() {}
 
-			int i = 0;	// set i to 0
-			int headCount = 0;	// counts headaches
+		// Méthode countSymptoms qui va conter les occurences de chaque symptoms existant dans la liste
+		public Map<String, Integer> countSymptoms(List<String> symptoms) {}
 
-			while (line != null) {
-				i++;	// increment i
-				System.out.println("symptom from file: " + line);
-				if (line.equals("headache")) {
-					headCount++;
-					System.out.println("number of headaches: " + headCount);
-				}
-				else if (line.equals("rush")) {
-					rashCount++;
-				}
-				else if (line.contains("pupils")) {
-					pupilCount++;
-				}
+		// Méthode sortSymptoms qui va trié la liste de symptoms et d'occurences par ordre alphabétique
+		public Map<String, Integer> sortSymptoms(Map<String, Integer> symptoms) {}
 
-				line = reader.readLine();	// get another symptom
-			}
-			reader.close();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		// Méthode writeSymptoms qui écrit le résultat dans le fichier de sortie en utilisant l'instance de ISymptomWriter
+		public void writeSymptoms(Map<String, Integer> symptoms) {}
 
-		// next generate output
-		FileWriter writer = new FileWriter ("result.out");
-		writer.write("headache: " + headacheCount + "\n");
-		writer.write("rash: " + rashCount + "\n");
-		writer.write("dialated pupils: " + pupilCount + "\n");
-		writer.close();
 	}
 }
