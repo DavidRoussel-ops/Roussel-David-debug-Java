@@ -11,6 +11,8 @@ public class AnalyticsCounter {
 	private static int headacheCount = 0;
 	private static int rashCount = 0;
 	private static int pupilCount = 0;
+	private final ISymptomReader reader;
+	private final ISymptomWriter writer;
 
 	// Constructeur pour les class ISymptomReader et ISymptomWriter
 	public AnalyticsCounter(ISymptomReader reader, ISymptomWriter writer) {
@@ -21,7 +23,7 @@ public class AnalyticsCounter {
 	public static void main(String[] args) throws Exception {
 
 		// Méthode getSymptoms pour récupérer la liste des entrées dans le fichier
-		public List<String> getSymptoms() {}
+		public List<String> getSymptoms("symptoms.txt") {}
 
 		// Méthode countSymptoms qui va conter les occurences de chaque symptoms existant dans la liste
 		public Map<String, Integer> countSymptoms(List<String> symptoms) {}
