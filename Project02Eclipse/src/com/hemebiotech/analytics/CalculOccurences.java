@@ -2,18 +2,17 @@ package com.hemebiotech.analytics;
 
 import java.util.*;
 
-public class calculOccurences {
+public class CalculOccurences implements ISymptomCalcul {
 
+    @Override
+    public Map<String, Integer> CalculSymptoms(List<String> symptoms) {
 
-    public void countSymptoms(Map<String, Integer> map) {
+        //Création d'une nouvel map
+        Map<String, Integer> map = new TreeMap<>();
 
-        map.forEach((key, value) -> {
-            if (map.containsKey(key)) {
-                value += 1;
-            }
-        });
+        symptoms.forEach(symptom -> map.put(symptom, map.getOrDefault(symptom, 0) + 1));
 
-
+        return map;
 
     }
 
