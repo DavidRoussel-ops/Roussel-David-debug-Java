@@ -14,7 +14,7 @@ public class AnalyticsCounter {
 			// Instance qui permet de retourné un Map dans l'ordre alphabétique.
 			Map<String, Integer> map = new TreeMap<>();
 			// Instance de la class ReadSymptomDataFromFile qui vient lire le fichier texte.
-			ReadSymptomDataFromFile readSymptomDataFromFile = new ReadSymptomDataFromFile("C:/Roussel-David-debug-Java/Project02Eclipse/symptoms.txt");
+			ReadSymptomDataFromFile readSymptomDataFromFile = new ReadSymptomDataFromFile("symptoms.txt");
 			// Utilisation de la méthode GetSymptoms de la class ReadSymptomDataFromFile pour la stocké dans la liste result.
 			result = readSymptomDataFromFile.GetSymptoms();
 			// Instance de la class CalculOccurences qui vient calculer le nombres d'occurence d'une liste.
